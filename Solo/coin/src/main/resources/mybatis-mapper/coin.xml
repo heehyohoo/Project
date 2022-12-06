@@ -15,5 +15,26 @@
         where email=#{email} and password=#{password}
     </select>
 
+    <insert id="subscribe" parameterType="String">
+        INSERT INTO subscribe
+            (email)
+        values
+            (#{email})
+    </insert>
+
+    <insert id="contact" parameterType="Hashmap">
+        INSERT INTO contact
+            (name,email,phone,message)
+        values
+            (#{name},#{eamil},#{phone},#{message})
+    </insert>
+
+    <insert id="addPoint" parameterType="Hashmap">
+        INSERT INTO payment
+            (email,amount,uid)
+        values
+            (#{email},#{amount},#{uid})
+    </insert>
+
 
 </mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coin.mapper.CoinMapper">
+
+    <insert id="insertMember" parameterType="com.example.coin.dto.Member">
+        INSERT INTO member
+            (email,password,name,phone,address,detail) values
+            (#{email},#{password},#{name},#{phone},#{address},#{addressDetail})
+    </insert>
+
+    <select id="checkUser" resultType="int" parameterType="Hashmap">
+        select count(email) from member
+        where email=#{email} and password=#{password}
+    </select>
+
+    <insert id="subscribe" parameterType="String">
+        INSERT INTO subscribe
+            (email)
+        values
+            (#{email})
+    </insert>
+
+    <insert id="contact" parameterType="Hashmap">
+        INSERT INTO contact
+            (name,email,phone,message)
+        values
+            (#{name},#{eamil},#{phone},#{message})
+    </insert>
+
+    <insert id="addPoint" parameterType="Hashmap">
+        INSERT INTO payment
+            (email,amount,uid)
+        values
+            (#{email},#{amount},#{uid})
+    </insert>
+
+
+</mapper>
