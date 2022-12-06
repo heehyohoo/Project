@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class JDBCTest {
     public static void main(String[] args) {
         String driver = "org.h2.Driver";
-        String url = "jdbc:h2:C:\\WorkSpace\\Project\\Team\\naverpay-clone-project-main/NaverPayDB";
+        String url = "jdbc:h2:C:/WorkSpace/Project/Team/naverpay-clone-project-main/NaverPayDB";
         String user = "sa";
         String password = "";
 

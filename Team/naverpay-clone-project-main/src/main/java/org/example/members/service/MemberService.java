@@ -20,6 +20,11 @@ public class MemberService implements IMemberService{
     }
 
     @Override
+    public MemberDTO login(String USERID) {
+        return null;
+    }
+
+    @Override
     public MemberDTO login(String USERID, String USERPWD) {
         Member member = memberDAO.select(USERID);
         if (member == null || member.getUSERPWD() == null) return null;
@@ -30,6 +35,11 @@ public class MemberService implements IMemberService{
             return memberDTO;
         }
         return null;
+    }
+
+    @Override
+    public boolean autoLogin(String autoLogin, String cookieId) {
+        return false;
     }
 
     @Override

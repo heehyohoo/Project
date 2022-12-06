@@ -9,7 +9,8 @@
             (#{email},#{password},#{name},#{phone},#{address},#{addressDetail})
     </insert>
 
-    <select id="checkUser" resultType="int" parameterType="Hashmap">
+
+    <select id="checkUser" resultType="int" parameterType="com.example.coin.dto.Member">
         select count(email) from member
         where email=#{email} and password=#{password}
     </select>

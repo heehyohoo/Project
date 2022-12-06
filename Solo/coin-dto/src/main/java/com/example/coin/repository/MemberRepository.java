@@ -1,5 +1,6 @@
 package com.example.coin.repository;
 
+import com.example.coin.dto.Member;
 import com.example.coin.mapper.CoinMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,12 +14,12 @@ public class MemberRepository {
     @Autowired
     CoinMapper cm;
 
-    public int insertMember(@RequestParam HashMap<String, String> params) {
-        return cm.insertMember(params);
+    public int insertMember(Member member) {
+        return cm.insertMember(member);
     }
 
-    public int checkUser(@RequestParam HashMap<String, String> params) {
-        return cm.checkUser(params);
+    public int checkUser(Member member) {
+        return cm.checkUser(member);
     }
 
     public int subscribe(String email) {
