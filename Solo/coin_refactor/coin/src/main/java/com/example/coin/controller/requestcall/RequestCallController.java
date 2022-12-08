@@ -1,6 +1,6 @@
-package com.example.coin.controller;
+package com.example.coin.controller.requestcall;
 
-import com.example.coin.dto.RequestCallDto;
+import com.example.coin.dto.RequestCall;
 import com.example.coin.service.RequestCallService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +18,9 @@ public class RequestCallController {
     }
 
     @PostMapping("/requestCall")
-    public String requestCall(RequestCallDto requestCallDto, Model model) {
+    public String requestCall(RequestCall requestCall, Model model) {
 
-        requestCallService.insertContact(requestCallDto);
+        requestCallService.insertContact(requestCall);
         model.addAttribute("message","연락요청이 완료 되었습니다.");
         model.addAttribute("url","/");
         return "message";

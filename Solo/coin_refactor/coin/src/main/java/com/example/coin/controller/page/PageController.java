@@ -1,4 +1,4 @@
-package com.example.coin.controller;
+package com.example.coin.controller.page;
 
 
 import org.springframework.stereotype.Controller;
@@ -20,9 +20,20 @@ public class PageController {
         return "signup";
     }
 
-    @GetMapping("goLogin")
-    public String login() {
+    @GetMapping("/goLogin")
+    public String login(HttpSession session,Model model) {
+
+        if(session.getAttribute("email") != null) {
+            model.addAttribute("message", "현재 로그인 상태 입니다.");
+            model.addAttribute("url", "/goMarket");
+            return "message";
+        }
+
+        if(session.getAttribute("email") == null) {
+
+        }
         return "login";
+
     }
 
     @GetMapping("/goPay")
@@ -31,8 +42,19 @@ public class PageController {
     }
 
     @GetMapping("/goMarket")
-    public String market() {
-        return "market";
+    public String market(HttpSession session,Model model) {
+
+        if(session.getAttribute("email") != null) {
+            return "market";
+        }
+
+        if(session.getAttribute("email") == null) {
+            model.addAttribute("message", "로그인 상태가 아닙니다.");
+            model.addAttribute("url", "/goLogin");
+        }
+        return "message";
+
+
     }
 
     @GetMapping("/goHistory")

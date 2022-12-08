@@ -3,7 +3,7 @@
 
 <mapper namespace="com.example.coin.mapper.MemberMapper">
 
-    <insert id="insertMember" parameterType="com.example.coin.dto.MemberDto">
+    <insert id="insertMember" parameterType="com.example.coin.dto.Member">
         INSERT INTO member
         (email,password,name,phone,address,detail)
         values
@@ -14,6 +14,11 @@
     <select id="checkEmail" parameterType="String" resultType="int">
         SELECT count(email) from member
         where email=#{email}
+    </select>
+
+    <select id="checkMember" parameterType="com.example.coin.dto.Member" resultType="int">
+        SELECT count(email) from member
+        where email=#{email} and password = #{password}
     </select>
 
 

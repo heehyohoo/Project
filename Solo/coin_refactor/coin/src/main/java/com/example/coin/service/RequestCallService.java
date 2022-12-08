@@ -1,7 +1,7 @@
 package com.example.coin.service;
 
 
-import com.example.coin.dto.RequestCallDto;
+import com.example.coin.dto.RequestCall;
 import com.example.coin.repository.RequestCallRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class RequestCallService {
         this.requestCallRepository = requestCallRepository;
     }
 
-    public int insertContact(RequestCallDto requestCallDto) {
-        return requestCallRepository.insertContact(requestCallDto);
+    public int insertContact(RequestCall requestCall) {
+        return requestCallRepository.insertContact(requestCall);
     }
 }

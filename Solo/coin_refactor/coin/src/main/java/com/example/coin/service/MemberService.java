@@ -1,7 +1,7 @@
 package com.example.coin.service;
 
 
-import com.example.coin.dto.MemberDto;
+import com.example.coin.dto.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.coin.repository.MemberRepository;
@@ -16,11 +16,15 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    public int insertMember(MemberDto member) {
+    public int insertMember(Member member) {
         return memberRepository.insertMember(member);
     }
 
     public int checkEmail(String email) {
         return memberRepository.checkEmail(email);
+    }
+
+    public int checkMember(Member member) {
+        return memberRepository.checkMember(member);
     }
 }

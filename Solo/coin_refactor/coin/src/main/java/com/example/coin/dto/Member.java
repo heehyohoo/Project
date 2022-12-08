@@ -1,7 +1,7 @@
 package com.example.coin.dto;
 
 
-public class MemberDto {
+public class Member {
 
     private String email;
     private String password;
@@ -10,7 +10,7 @@ public class MemberDto {
     private String address;
     private String addressDetail;
 
-    public MemberDto(String email, String password, String name, String phone, String address, String addressDetail) {
+    public Member(String email, String password, String name, String phone, String address, String addressDetail) {
         this.email = email;
         this.password = password;
         this.name = name;

@@ -3,7 +3,7 @@
 
 <mapper namespace="com.example.coin.mapper.RequestCallMapper">
 
-    <insert id="insertContact" parameterType="com.example.coin.dto.RequestCallDto">
+    <insert id="insertContact" parameterType="com.example.coin.dto.RequestCall">
 
         INSERT INTO contact
             (name,email,phone,message)
