@@ -20,5 +20,10 @@ public interface CoinMapper {
 
     public int addPoint(@RequestParam HashMap<String,String>params);
 
+    public String totalAmount(String email);
+    public String totalPrice(String email);
+
+
+
 
 }

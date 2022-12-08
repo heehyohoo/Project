@@ -1,47 +1,72 @@
 package com.example.coin.controller;
 
 
-import com.example.coin.service.MemberService;
+import com.example.coin.service.CoinService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.Optional;
+import java.util.OptionalDouble;
 
-@Controller
+@RestController
 public class CoinController {
 
     @Autowired
-    MemberService ms;
+    CoinService cs;
 
-    @GetMapping("/subscribe")
-    public String subscribe(String email , Model model) {
 
-        ms.subscribe(email);
-        model.addAttribute("message", "구독완료!");
-        model.addAttribute("url", "/");
-        return "message";
+    @GetMapping("/checkBalance")
+    public String checkBalance(String total, HttpSession session) {
+
+        String email = (String) session.getAttribute("email");
+
+        double totalAmount = Double.parseDouble(cs.totalAmount(email)); // 내 총포인트
+
+        Optional<String> optTotal = Optional.ofNullable(cs.totalPrice(email)); // 총 구매내역
+        double totalPrice = (Double.valueOf(optTotal.orElse("0")));
+
+
+        if (totalPrice < totalAmount) {
+            return "can";
+        }
+
+        if (totalPrice > totalAmount) {
+            return "cannot";
+        }
+
+        if (session.getAttribute("email") == null) {
+        }
+        return "login";
+
     }
 
-    @PostMapping("/requestCall")
-    public String requestCall(@RequestParam HashMap<String,String> params, Model model) {
-        ms.contact(params);
-        model.addAttribute("message", "연락요청 완료.");
-        model.addAttribute("url", "/");
-        return "message";
+    @PostMapping("/buyCoin")
+    public String buyCoin(@RequestParam HashMap<String, String> params) {
 
+        System.out.println(params);
+        return "";
     }
 
-    @GetMapping("/point")
-    public String point(@RequestParam HashMap<String,String> params, HttpSession session,Model model) {
-        params.put("email",(String)session.getAttribute("email"));
-        ms.addPoint(params);
-        model.addAttribute("message", "포인트 적립 성공");
-        model.addAttribute("url", "/goMarket");
-        return "message";
+    @PostMapping("/buyList")
+    public String buyList() {
+        return "";
     }
+
+    @PostMapping("/pointList")
+    public String pointList() {
+        return "";
+    }
+
+    @PostMapping("/hadBalance")
+    public String hadBalance() {
+        return "";
+    }
+
+    @PostMapping("/havingBalance")
+    public String havingBalance() {
+        return "";
+    }
+
 }

@@ -11,25 +11,25 @@ import java.util.HashMap;
 public class MemberRepository {
 
     @Autowired
-    CoinMapper cm;
+    CoinMapper mapper;
 
     public int insertMember(@RequestParam HashMap<String, String> params) {
-        return cm.insertMember(params);
+        return mapper.insertMember(params);
     }
 
     public int checkUser(@RequestParam HashMap<String, String> params) {
-        return cm.checkUser(params);
+        return mapper.checkUser(params);
     }
 
     public int subscribe(String email) {
-        return cm.subscribe(email);
+        return mapper.subscribe(email);
     }
 
     public int contact(@RequestParam HashMap<String,String> params) {
-        return cm.contact(params);
+        return mapper.contact(params);
     }
     public int addPoint(@RequestParam HashMap<String,String>params) {
-        return cm.addPoint(params);
+        return mapper.addPoint(params);
     }
 
 

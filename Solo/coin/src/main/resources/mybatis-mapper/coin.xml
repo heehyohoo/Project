@@ -36,5 +36,18 @@
             (#{email},#{amount},#{uid})
     </insert>
 
+    <select id="totalAmount" resultType="String" parameterType="String">
+        select sum(amount) from payment
+        where email=#{email}
+    </select>
+
+    <select id="totalPrice" resultType="String" parameterType="String">
+        select sum(total) from buy
+        where email=#{email}
+    </select>
+
+
+
+
 
 </mapper>
