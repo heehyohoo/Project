@@ -1,4 +1,4 @@
-package com.example.coin.page.controller;
+package com.example.coin.controller;
 
 
 import org.springframework.stereotype.Controller;

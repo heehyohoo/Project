@@ -1,4 +1,4 @@
-package com.example.coin.member.controller;
+package com.example.coin.controller;
 
 import com.example.coin.dto.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
