@@ -3,5 +3,18 @@
 
 <mapper namespace="com.example.coin.mapper.MemberMapper">
 
+    <insert id="insertMember" parameterType="com.example.coin.dto.MemberDto">
+        INSERT INTO member
+        (email,password,name,phone,address,detail)
+        values
+            (#{email},#{password},#{name},#{phone},#{address},#{addressDetail})
+
+    </insert>
+
+    <select id="checkEmail" parameterType="String" resultType="int">
+        SELECT count(email) from member
+        where email=#{email}
+    </select>
+
 
 </mapper>
