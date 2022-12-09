@@ -1,13 +1,13 @@
 package com.example.coin.dto;
 
-public class RequestCall {
+public class Contact {
 
     private String name;
     private String email;
     private String phone;
     private String message;
 
-    public RequestCall(String name, String email, String phone, String message) {
+    public Contact(String name, String email, String phone, String message) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -46,3 +46,6 @@ public class RequestCall {
         this.message = message;
     }
 }
+
+
+
