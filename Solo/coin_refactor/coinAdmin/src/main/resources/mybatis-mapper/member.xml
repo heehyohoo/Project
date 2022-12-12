@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coinadmin.mapper.MemberMapper">
+
+    <select id="selectMember" resultType="com.example.coinadmin.dto.Member">
+        SELECT email,name,phone,address,detail,indate from member
+    </select>
+
+    <select id="selectCountMember" resultType="int">
+        SELECT count(email) from member
+    </select>
+
+    <select id="selectAmountPayment" resultType="int">
+        SELECT sum(amount) from payment
+    </select>
+
+</mapper>

@@ -84,14 +84,19 @@
     <div class="container" id="balance">
         <div class=" col-md-10 offset-md-1">
             <div class="row">
-                <div class="col-md-6 ">
+                <div class="col-md-4">
                     <div class="contactus"  id="hadBalance">
 
                     </div>
                 </div>
-                <div class="col-md-6" style="display: inline-flex;">
+                <div class="col-md-4" style="display: inline-flex;">
                     <h1 class="contactus"  id="havingBalance" >
                         <h1 style='font-size: 30px;' >현재 자산 : </h1><h1 id="calp" style='font-size: 30px;    padding-top: 5px;' >0</h1><h1 style='font-size: 30px;    padding-top: 5px;' >원</h1>
+                    </h1>
+                </div>
+                <div class="col-md-4" style="display: inline-flex;">
+                    <h1 class="contactus"  id="moneyBalance" >
+                        <h1 style='font-size: 30px;' >현금 자산 : </h1><h1 id="mcalp" style='font-size: 30px;    padding-top: 5px;' >0</h1><h1 style='font-size: 30px;    padding-top: 5px;' >원</h1>
                     </h1>
                 </div>
             </div>
@@ -272,7 +277,8 @@
                         dataType: "json",
                         complete: function (res) {
                             let resp=res.responseText;
-                            let newCal=parseFloat($("#calp").html())
+                            $("#mcalp").html(resp);
+
                         }
                     });
                 }

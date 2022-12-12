@@ -45,20 +45,20 @@ public class BuyController {
         return buyService.selectBuyHistory((String) session.getAttribute("email"));
     }
 
-    @GetMapping("/hadBalance")
+    @GetMapping("/hadBalance") // 기존 구매금액
     public double hadBalance(HttpSession session) {
         Optional<String> optBuyTotal = Optional.ofNullable(buyService.buyTotal((String) session.getAttribute("email")));
         return Double.parseDouble(optBuyTotal.orElse("0"));
     }
 
-    @GetMapping("/havingBalance")
+    @GetMapping("/havingBalance") //코인 구매 종류와  총수량
     public ArrayList<Buy>havingBalance(HttpSession session) {
 
         return buyService.selectBuyCoinId((String)session.getAttribute("email"));
     }
 
 
-    @GetMapping("/moneyBalance")
+    @GetMapping("/moneyBalance") //현금잔액
     public double moneyBalance(HttpSession session) {
         double totalAmount = Double.parseDouble(buyService.totalAmount((String) session.getAttribute("email")));
         Optional<String> optBuyTotal = Optional.ofNullable(buyService.buyTotal((String) session.getAttribute("email")));
