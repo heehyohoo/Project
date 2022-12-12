@@ -6,6 +6,8 @@ import com.example.coin.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class PaymentService {
 
@@ -18,5 +20,9 @@ public class PaymentService {
 
     public int insertPoint(Payment payment) {
         return paymentRepository.insertPoint(payment);
+    }
+
+    public ArrayList<Payment> selectPaymentHistory(String email) {
+        return paymentRepository.selectPaymentHistory(email);
     }
 }

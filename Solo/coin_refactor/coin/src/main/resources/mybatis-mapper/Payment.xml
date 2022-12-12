@@ -10,6 +10,13 @@
             (#{email},#{amount},#{uid})
     </insert>
 
+    <select id="selectPaymentHistory" parameterType="String" resultType="com.example.coin.dto.Payment">
+        SELECT
+            amount,indate
+        FROM payment
+        WHERE email=#{email}
+    </select>
+
 
 
 </mapper>

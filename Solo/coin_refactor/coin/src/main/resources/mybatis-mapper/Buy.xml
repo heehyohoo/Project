@@ -3,12 +3,40 @@
 
 <mapper namespace="com.example.coin.mapper.BuyMapper">
 
-    <insert id="insertPoint" parameterType="com.example.coin.dto.Buy">
+   <select id="totalAmount" parameterType="String" resultType="String">
+       SELECT
+           sum(amount)
+        FROM payment
+        WHERE email=#{email}
+   </select>
+
+    <select id="buyTotal" parameterType="String" resultType="String">
+        SELECT
+            sum(total)
+        FROM buy
+        WHERE email=#{email}
+    </select>
+    
+    <insert id="insertBuyHistory" parameterType="com.example.coin.dto.Buy">
         INSERT INTO buy
-        (email,coinId,name,price,amount,total)
+            (email,coinId,name,price,amount,total)
         values
             (#{email},#{coinId},#{name},#{price},#{amount},#{total})
     </insert>
+
+    <select id="selectBuyHistory" parameterType="String" resultType="com.example.coin.dto.Buy">
+        SELECT
+            name,amount,total,indate
+        FROM buy
+        WHERE email=#{email}
+    </select>
+
+    <select id="selectBuyCoinId" parameterType="String" resultType="com.example.coin.dto.Buy">
+        SELECT
+            coinId,sum(amount)
+        FROM buy
+        WHERE email=#{email} Group by coinId
+    </select>
 
 
 
