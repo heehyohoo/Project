@@ -42,4 +42,11 @@ public class PageController {
     public String subscribeList() {
         return "subscribeList";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.setAttribute("Id", "null");
+        return "login";
+    }
+
 }
