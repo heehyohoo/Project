@@ -3,7 +3,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
-
 @Controller
 public class PageController {
     @GetMapping("/")
@@ -21,4 +20,23 @@ public class PageController {
         return "memberList";
     }
 
+    @GetMapping("/goPayment")
+    public String payment() {
+        return "paymentList";
+    }
+
+    @GetMapping("/goBuy")
+    public String buyList() {
+        return "buyList";
+    }
+
+    @GetMapping("goContact")
+    public String contactList() {
+        return "contactList";
+    }
+
+    @GetMapping("/goSubscribe")
+    public String subscribeList() {
+        return "subscribeList";
+    }
 }

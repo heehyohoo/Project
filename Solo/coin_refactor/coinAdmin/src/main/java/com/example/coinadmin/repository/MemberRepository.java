@@ -23,8 +23,6 @@ public class MemberRepository {
         return memberMapper.selectMember();
     }
 
-    public int selectCountMember() {
-        return memberMapper.selectCountMember();
-    }
+
 
 }

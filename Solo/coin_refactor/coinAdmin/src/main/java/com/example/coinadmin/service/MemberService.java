@@ -23,7 +23,5 @@ public class MemberService {
         return memberRepository.selectMember();
     }
 
-    public int selectCountMember() {
-        return memberRepository.selectCountMember();
     }
-}
+

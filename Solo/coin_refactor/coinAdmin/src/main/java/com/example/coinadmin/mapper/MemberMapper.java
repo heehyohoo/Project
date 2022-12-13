@@ -9,5 +9,5 @@ import java.util.ArrayList;
 public interface MemberMapper {
     public ArrayList<Member>selectMember();
 
-    public int selectCountMember();
+
 }

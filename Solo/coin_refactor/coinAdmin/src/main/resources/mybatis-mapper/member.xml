@@ -7,12 +7,5 @@
         SELECT email,name,phone,address,detail,indate from member
     </select>
 
-    <select id="selectCountMember" resultType="int">
-        SELECT count(email) from member
-    </select>
-
-    <select id="selectAmountPayment" resultType="int">
-        SELECT sum(amount) from payment
-    </select>
 
 </mapper>

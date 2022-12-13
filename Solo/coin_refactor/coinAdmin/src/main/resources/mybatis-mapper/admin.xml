@@ -8,4 +8,37 @@
         where id=#{id} and password = #{password}
     </select>
 
+    <select id="selectCntMember" resultType="int">
+        SELECT count(*) from member
+    </select>
+
+    <select id="selectAmountPayment" resultType="double">
+        SELECT sum(amount) from payment
+    </select>
+
+    <select id="selectCntBuy" resultType="int">
+        SELECT count(*) from buy
+    </select>
+
+    <select id="selectCntContact" resultType="int">
+        SELECT count(*) from contact
+    </select>
+
+    <select id="selectPayment" resultType="com.example.coinadmin.dto.Payment">
+        SELECT id,email,amount,uid,indate from payment
+    </select>
+
+    <select id="selectBuy" resultType="com.example.coinadmin.dto.Buy">
+        SELECT id,email,coinId,name,price,amount,total,indate from buy
+    </select>
+
+    <select id="selectContact" resultType="com.example.coinadmin.dto.Contact">
+        SELECT id,name,email,phone,message,indate from contact
+    </select>
+
+    <select id="selectSubscribe" resultType="com.example.coinadmin.dto.Subscribe">
+        SELECT email,indate from subscribe
+    </select>
+
+
 </mapper>
