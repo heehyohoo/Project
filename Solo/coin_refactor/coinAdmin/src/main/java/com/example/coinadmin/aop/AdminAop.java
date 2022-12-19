@@ -27,8 +27,6 @@ public class AdminAop {
 
     }
 
-
-
     @Around("cut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         HttpSession session = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest().getSession();

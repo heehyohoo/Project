@@ -12,9 +12,7 @@ public class PageController {
     }
 
     @GetMapping("/index")
-    public String index(HttpSession session) {
-
-
+    public String index() {
         return "index";
     }
 
