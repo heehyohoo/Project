@@ -43,7 +43,7 @@ public class PageController {
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        session.setAttribute("Id", "null");
+        session.setAttribute("Id", null);
         return "login";
     }
 
