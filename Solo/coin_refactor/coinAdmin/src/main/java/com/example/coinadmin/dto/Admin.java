@@ -1,8 +1,12 @@
 package com.example.coinadmin.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Admin {
 
+    @ApiModelProperty(value = "아이디", example = "Id", required = true, dataType = "java.lang.String")
     private String id;
+    @ApiModelProperty(value = "패스워드", example = "password", required = true, dataType = "java.lang.String")
     private String password;
 
     public Admin(String id, String password) {
