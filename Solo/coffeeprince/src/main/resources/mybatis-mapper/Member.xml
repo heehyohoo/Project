@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.coffeeprince.mapper.MemberMapper">
+    <insert id="insertMember" parameterType="com.example.coffeeprince.member.dto.Member">
+        insert into customer
+            (id,pw,name,phone,address,addressDetail,email,gender,sns,birth)
+            values
+                (#{id},#{pw},#{name},#{phone},#{address},#{addressDetail},#{email},#{gender},#{sns},#{birth})
+    </insert>
+</mapper>
