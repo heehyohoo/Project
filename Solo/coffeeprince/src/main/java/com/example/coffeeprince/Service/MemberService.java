@@ -19,4 +19,8 @@ public class MemberService {
     public int insertMember(Member member) {
         return memberRepository.insertMember(member);
     }
+
+    public int checkIdPw(Member member) {
+        return memberRepository.checkIdPw(member);
+    }
 }

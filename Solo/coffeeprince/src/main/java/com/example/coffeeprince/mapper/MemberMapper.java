@@ -8,4 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MemberMapper {
 
     public int insertMember(Member member);
+
+    public int checkIdPw(Member member);
 }

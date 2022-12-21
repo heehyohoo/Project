@@ -8,4 +8,9 @@
             values
                 (#{id},#{pw},#{name},#{phone},#{address},#{addressDetail},#{email},#{gender},#{sns},#{birth})
     </insert>
+
+    <select id="checkIdPw" parameterType="com.example.coffeeprince.member.dto.Member" resultType="int">
+        SELECT count(id) from customer
+        where id=#{id} and pw = #{pw}
+    </select>
 </mapper>

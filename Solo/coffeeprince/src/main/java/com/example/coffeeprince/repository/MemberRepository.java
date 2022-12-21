@@ -19,4 +19,8 @@ public class MemberRepository {
     public int insertMember(Member member) {
         return memberMapper.insertMember(member);
     }
+
+    public int checkIdPw(Member member) {
+        return memberMapper.checkIdPw(member);
+    }
 }
