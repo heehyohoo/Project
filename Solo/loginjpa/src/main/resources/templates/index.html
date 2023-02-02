@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <script src="https://ajax.googleapis.com/ajax/libs.jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+ID : <input type="text" name="userID" id="userID"> <br>
+PW : <input type="password" name="password" id="password"> <br>
+이름 : <input type="text" name="name" id="name"> <br>
+나이 : <input type="number" name="age" id="age"> <br>
+전화번호 : <input type="text" name="phone" id="phone"> <br>
+주소 : <input type="text" name="address" id="address"> <br>
+<button id="subButton">가입하기</button>
+
+
+</body>
+<script>
+    $("#subButton").click(function (){
+
+        let id=$('#userID').val();
+        let password=$('#password').val();
+        let name=$('#name').val();
+        let age=$('#age').val();
+        let phone=$('#phone').val();
+        let address=$('#address').val();
+
+        $.ajax({
+            url:'/signup',
+            data: {
+                id:id,
+                password:password,
+                name:name,
+                age:age,
+                phone:phone,
+                address:address
+            },
+            type:'POST',
+            success: function (response){
+                if(response =='success'){
+                    alert()
+                }else {
+                    alert()
+                }
+
+            }
+        })
+    });
+
+</script>
+</html>
